@@ -313,7 +313,8 @@ include 'chapter18:webflux-boot'
 findProject(':chapter18:webflux-boot')?.name = 'webflux-boot'
 include 'chapter18:webflux'
 findProject(':chapter18:webflux')?.name = 'webflux'
-
+include 'chapter18:rx2-webflux-boot'
+findProject(':chapter18:rx2-webflux-boot')?.name = 'rx2-webflux-boot'
 include 'chapter18:boot-tests'
 findProject(':chapter18:boot-tests')?.name = 'boot-tests'
 
@@ -328,4 +329,6 @@ rootProject.children.each { project ->
 	assert project.buildFile.exists()
 	assert project.buildFile.isFile()
 }
+include 'chapter18:base-boot'
+findProject(':chapter18:base-boot')?.name = 'base-boot'
 

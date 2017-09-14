@@ -9,9 +9,10 @@ subprojects {
 	}
 
 	dependencies {
+		compile misc.jsr250
 		//we specify these dependencies for all submodules, except the boot module, that defines its own
 		if (!project.name.contains("boot")) {
-			compile spring.contextSupport, misc.slf4jJcl, misc.logback, db.h2, misc.lang3, hibernate.em,
+			compile spring.contextSupport, misc.logback, db.h2, misc.lang3, hibernate.em,
 					hibernate.validator, misc.joda, misc.validation
 		}
 		testCompile testing.junit

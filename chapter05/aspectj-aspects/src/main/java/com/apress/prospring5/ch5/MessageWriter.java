@@ -1,6 +1,10 @@
 package com.apress.prospring5.ch5;
 
 public class MessageWriter {
+
+    public MessageWriter() {
+    }
+
     public void writeMessage() {
         System.out.println("foobar!");
     }

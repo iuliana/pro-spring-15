@@ -9,6 +9,7 @@ subprojects {
 	}
 
 	dependencies {
+		compile misc.jsr250
 		if (!project.name.contains("boot") && !project.name.contains("webflux")) {
 			compile(spring.jdbc) {
 				//exclude these as batchCore will bring them on as transitive dependencies
@@ -16,7 +17,7 @@ subprojects {
 				exclude module: 'spring-beans'
 				exclude module: 'spring-tx'
 			}
-			compile spring.batchCore, misc.io, misc.slf4jJcl, misc.logback, misc.lang3
+			compile spring.batchCore, misc.io, misc.logback, misc.lang3
 		}
 	}
 }

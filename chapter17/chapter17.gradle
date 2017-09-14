@@ -9,6 +9,7 @@ subprojects {
 	}
 
 	dependencies {
+		compile misc.jsr250
 		if (!project.name.contains("boot")) {
 			compile (web.tomcatWsApi) {
 				exclude  module: 'tomcat-embed-core'
@@ -16,7 +17,7 @@ subprojects {
 			compile (web.tomcatWsEmbed) {
 				exclude  module: 'tomcat-embed-core'
 			}
-			compile spring.context, spring.webSocket, spring.messaging, spring.webmvc, web.websocket, misc.slf4jJcl,
+			compile spring.context, spring.webSocket, spring.messaging, spring.webmvc, web.websocket,
 					misc.logback, misc.lang3, misc.jacksonDatabind, web.servlet, web.jstl
 		}
 		testCompile testing.junit

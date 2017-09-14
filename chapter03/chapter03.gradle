@@ -9,7 +9,7 @@ subprojects {
 	}
 
 	dependencies {
-		compile spring.context, misc.slf4jJcl, misc.logback
+		compile spring.context, misc.logback, misc.jsr250
 		testCompile testing.junit
 	}
 }

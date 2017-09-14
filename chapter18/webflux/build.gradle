@@ -2,7 +2,7 @@ apply plugin: 'war'
 
 dependencies {
     compile spring.webflux, spring.data, db.h2, hibernate.em, react.projReactorIpc, react.tomcatEmbedded,
-            misc.jacksonDatabind, misc.slf4jJcl, misc.logback
+            misc.jacksonDatabind, misc.logback
     compile(hibernate.tx) {
         exclude group: 'org.hibernate', module: 'hibernate'
     }

@@ -14,13 +14,9 @@ buildscript {
 		classpath "nl.eveoh:gradle-aspectj:1.6"
 	}
 }
+
 apply plugin: 'aspectj'
-
-sourceSets {
-	aspects
-}
-
-sourceSets.aspects.java.srcDirs = ['src/main/aspects']
+apply plugin: 'idea'
 
 jar {
 	manifest {
@@ -31,4 +27,8 @@ jar {
 				"Class-Path": configurations.compile.collect { it.getName() }.join(' ')
 		)
 	}
+}
+
+compileAspect {
+	xlint = 'warning'
 }

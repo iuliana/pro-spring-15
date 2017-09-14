@@ -9,6 +9,6 @@ subprojects {
 	}
 
 	dependencies {
-		compile spring.webmvc, misc.slf4jJcl, misc.logback, misc.lang3
+		compile spring.webmvc, misc.logback, misc.lang3, misc.jsr250
 	}
 }

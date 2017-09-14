@@ -30,12 +30,12 @@ import static org.springframework.web.reactive.function.server.ServerResponse.ok
  */
 // Uncomment the annotations here and comment all in the ReactiveApplication class, before running this class,
 // to use the SingerHandler class
-@SpringBootApplication
+//@SpringBootApplication
 public class SingerApplication {
 
 	private static Logger logger = LoggerFactory.getLogger(SingerApplication.class);
 
-	@Autowired
+	//@Autowired
 	SingerHandler singerHandler;
 
 	public RouterFunction<ServerResponse> routingFunction() {
@@ -49,7 +49,7 @@ public class SingerApplication {
 				});
 	}
 
-	@Bean
+	//@Bean
 	public ServletRegistrationBean servletRegistrationBean() throws Exception {
 		HttpHandler httpHandler = RouterFunctions.toHttpHandler(routingFunction());
 		ServletRegistrationBean registrationBean = new ServletRegistrationBean<>(new ServletHttpHandlerAdapter(httpHandler), "/");

@@ -22,7 +22,7 @@ public class ReactiveSampleTest {
 	@Test
 	public void testFlux() {
 		List<String> elements = new ArrayList<>();
-		Flux.just("hope", "sadness", "smile", "tear", "grin", "cry", "laugh").log().subscribe(new Subscriber<String>() {
+		Flux.just("hope", "sadness", "smile", "tear", "grin", "cry", "laugh").log().subscribe(new Subscriber<>() {
 			private Subscription sub;
 			int onNextAmount;
 

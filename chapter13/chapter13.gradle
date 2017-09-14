@@ -9,9 +9,10 @@ subprojects {
 	}
 
 	dependencies {
+		compile misc.jsr250
 		//we specify these dependencies for all submodules, except the boot module, that defines its own
 		if (!project.name.contains("junit5")) {
-			compile spring.context, spring.webmvc, misc.slf4jJcl, misc.logback, misc.lang3, misc.guava
+			compile spring.context, spring.webmvc, misc.logback, misc.lang3, misc.guava
 			testCompile testing.junit, testing.mockito, spring.test, testing.dbunit
 		}
 	}

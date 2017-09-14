@@ -6,3 +6,18 @@ jar {
 				"Class-Path"         : configurations.compile.collect { it.getName() }.join(' '))
 	}
 }
+
+
+/*ext.moduleName = 'com.apress.prospring5.ch3.collections'
+
+compileJava {
+	inputs.property("moduleName", moduleName)
+	doFirst {
+		options.compilerArgs = [
+				'--add-modules java.se.ee',
+				'--module-path', classpath.asPath,
+		]
+		classpath = files()
+	}
+}*/
+
