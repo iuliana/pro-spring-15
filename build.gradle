@@ -1,12 +1,12 @@
 ext {
 	//spring libs
-	springVersion = '5.0.0.RC3'
-	bootVersion = '2.0.0.M3'
-	springDataVersion = '2.0.0.M3'
+	springVersion = '5.0.0.RC4'
+	bootVersion = '2.0.0.M4'
+	springDataVersion = '2.0.0.RC3'
 	springAmqpVersion = '2.0.0.M4'
-	springSecurityVersion = '5.0.0.M2'
+	springSecurityVersion = '5.0.0.M4'
 	springBatchVersion = '4.0.0.M3'
-	springIntegrationVersion = '5.0.0.M6'
+	springIntegrationVersion = '5.0.0.M7'
 	springBatchIntegrationVersion = '4.0.0.M3'
 
 	//logging libs
@@ -195,5 +195,5 @@ tasks.withType(JavaCompile) {
 }
 
 task wrapper(type: Wrapper) {
-	gradleVersion = '4.0'
+	gradleVersion = '4.2.1'
 }
