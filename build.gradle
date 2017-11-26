@@ -1,13 +1,13 @@
 ext {
 	//spring libs
-	springVersion = '5.0.0.RC4'
-	bootVersion = '2.0.0.M4'
-	springDataVersion = '2.0.0.RC3'
-	springAmqpVersion = '2.0.0.M4'
-	springSecurityVersion = '5.0.0.M4'
-	springBatchVersion = '4.0.0.M3'
-	springIntegrationVersion = '5.0.0.M7'
-	springBatchIntegrationVersion = '4.0.0.M3'
+	springVersion = '5.0.2.BUILD-SNAPSHOT'
+	bootVersion = '2.0.0.M6'
+	springDataVersion = '2.1.0.BUILD-SNAPSHOT'
+	springAmqpVersion = '2.0.1.BUILD-SNAPSHOT'
+	springSecurityVersion = '5.0.0.BUILD-SNAPSHOT'
+	springBatchVersion = '4.0.0.BUILD-SNAPSHOT'
+	springIntegrationVersion = '5.0.0.BUILD-SNAPSHOT'
+	springBatchIntegrationVersion = '4.0.0.BUILD-SNAPSHOT'
 
 	//logging libs
 	slf4jVersion = '1.7.25'
