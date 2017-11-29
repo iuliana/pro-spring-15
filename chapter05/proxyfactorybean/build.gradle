@@ -1,5 +1,6 @@
 dependencies {
 	compile project(':chapter02:hello-world')
+	compile misc.aspectjweaver, misc.aspectjrt
 }
 
 jar {

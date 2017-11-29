@@ -1,6 +1,7 @@
 dependencies {
 	compile project(':chapter02:hello-world')
 	compile project(':chapter05:proxyfactorybean')
+	compile misc.aspectjweaver, misc.aspectjrt
 }
 
 jar {

@@ -11,7 +11,7 @@ subprojects {
 	dependencies {
 		//we specify these dependencies for all submodules, except the boot module, that defines its own
 		if (!project.name.contains("boot")) {
-			compile spring.context, misc.slf4jJcl, misc.logback, misc.aspectjweaver, misc.aspectjrt
+			compile spring.context, misc.slf4jJcl, misc.logback
 		}
 		testCompile testing.junit
 	}

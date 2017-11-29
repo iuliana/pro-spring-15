@@ -19,6 +19,11 @@ public class NewDocumentarist {
 		guitar.setBrand("Gibson");
 		guitarist.sing(guitar);
 		guitarist.talk();
+		try {
+			guitarist.smoke();
+		} catch (SmokingException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Autowired
