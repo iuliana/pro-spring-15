@@ -25,7 +25,7 @@ sourceSets.aspects.java.srcDirs = ['src/main/aspects']
 jar {
 	manifest {
 		attributes(
-				"Created-By": "Iuliana Cosmina",
+				"Created-By": System.getProperty('java.version'),
 				"Specification-Title": "Pro Spring 5",
 				"Main-Class": "com.apress.prospring5.ch5.AspectJDemo",
 				"Class-Path": configurations.compile.collect { it.getName() }.join(' ')

@@ -4,7 +4,7 @@ dependencies {
 
 jar {
 	manifest {
-		attributes("Created-By": "Iuliana Cosmina",
+		attributes("Created-By": System.getProperty('java.version'),
 				"Specification-Title": "Pro Spring 5",
 				"Main-Class": "com.apress.prospring5.ch18.SingerJobDemo",
 				"Class-Path": configurations.compile.collect { it.getName() }.join(' '))
