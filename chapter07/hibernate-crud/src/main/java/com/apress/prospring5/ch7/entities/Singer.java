@@ -1,5 +1,8 @@
 package com.apress.prospring5.ch7.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,54 +33,24 @@ public class Singer extends AbstractEntity {
 	public static final String FIND_ALL_WITH_ALBUM = "Singer.findAllWithAlbum";
 
 	@Column(name = "FIRST_NAME")
-	private String firstName;
+	@Getter @Setter private String firstName;
 
 	@Column(name = "LAST_NAME")
-	private String lastName;
+	@Getter @Setter private String lastName;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "BIRTH_DATE")
-	private Date birthDate;
+	@Getter @Setter private Date birthDate;
 
 	@OneToMany(mappedBy = "singer", cascade=CascadeType.ALL,
 			orphanRemoval=true)
-	private Set<Album> albums = new HashSet<>();
+	@Getter @Setter private Set<Album> albums = new HashSet<>();
 
 	@ManyToMany
 	@JoinTable(name = "singer_instrument",
 			joinColumns = @JoinColumn(name = "SINGER_ID"),
 			inverseJoinColumns = @JoinColumn(name = "INSTRUMENT_ID"))
-	private Set<Instrument> instruments = new HashSet<>();
-
-
-	public String getFirstName() {
-		return this.firstName;
-	}
-
-	public String getLastName() {
-		return this.lastName;
-	}
-
-	public Date getBirthDate() {
-		return birthDate;
-	}
-
-
-	public Set<Album> getAlbums() {
-		return albums;
-	}
-
-	public Set<Instrument> getInstruments() {
-		return instruments;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+	@Getter @Setter private Set<Instrument> instruments = new HashSet<>();
 
 	public boolean addAbum(Album album) {
 		album.setSinger(this);
@@ -86,18 +59,6 @@ public class Singer extends AbstractEntity {
 
 	public void removeAlbum(Album album) {
 		albums.remove(album);
-	}
-
-	public void setAlbums(Set<Album> albums) {
-		this.albums = albums;
-	}
-
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
-
-	public void setInstruments(Set<Instrument> instruments) {
-		this.instruments = instruments;
 	}
 
 	public boolean addInstrument(Instrument instrument) {

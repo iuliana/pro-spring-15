@@ -1,5 +1,7 @@
 package com.apress.prospring5.ch7.entities;
 
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -26,17 +28,13 @@ import static javax.persistence.GenerationType.IDENTITY;
 })
 public class Singer implements Serializable {
 
-	private Long id;
-	private String firstName;
-	private String lastName;
-	private Date birthDate;
-	private int version;
-	private Set<Album> albums = new HashSet<>();
-	private Set<Instrument> instruments = new HashSet<>();
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+	@Setter private Long id;
+	@Setter private String firstName;
+	@Setter private String lastName;
+	@Setter private Date birthDate;
+	@Setter private int version;
+	@Setter private Set<Album> albums = new HashSet<>();
+	@Setter private Set<Instrument> instruments = new HashSet<>();
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -82,14 +80,6 @@ public class Singer implements Serializable {
 		return instruments;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
 	public boolean addAbum(Album album) {
 		album.setSinger(this);
 		return getAlbums().add(album);
@@ -97,22 +87,6 @@ public class Singer implements Serializable {
 
 	public void removeAlbum(Album album) {
 		getAlbums().remove(album);
-	}
-
-	public void setAlbums(Set<Album> albums) {
-		this.albums = albums;
-	}
-
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
-
-	public void setVersion(int version) {
-		this.version = version;
-	}
-
-	public void setInstruments(Set<Instrument> instruments) {
-		this.instruments = instruments;
 	}
 
 	public boolean addInstrument(Instrument instrument) {

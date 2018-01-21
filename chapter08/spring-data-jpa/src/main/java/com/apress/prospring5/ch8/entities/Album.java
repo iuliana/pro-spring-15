@@ -1,5 +1,9 @@
 package com.apress.prospring5.ch8.entities;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
@@ -9,74 +13,30 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "album")
+@NoArgsConstructor
 public class Album implements Serializable {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "ID")
-    private Long id;
+    @Getter @Setter private Long id;
 
     @Version
     @Column(name = "VERSION")
-    private int version;
+    @Getter @Setter private int version;
 
     @Column
-    private String title;
+    @Getter @Setter private String title;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "RELEASE_DATE")
-
-    private Date releaseDate;
+    @Getter @Setter private Date releaseDate;
 
     @ManyToOne
     @JoinColumn(name = "SINGER_ID")
-    private Singer singer;
-
-    public Album() {
-    }
+    @Getter @Setter private Singer singer;
 
     public Album(String title, Date releaseDate) {
         this.title = title;
         this.releaseDate = releaseDate;
-    }
-
-    public Long getId() {
-        return this.id; 
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getVersion() {
-        return this.version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
-
-    public String getTitle() {
-        return this.title;
-    } 
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Date getReleaseDate() {
-        return this.releaseDate;
-    }
-
-    public void setReleaseDate(Date releaseDate) {
-        this.releaseDate = releaseDate;
-    }
-
-    public Singer getSinger() {
-        return this.singer;
-    }
-
-    public void setSinger(Singer singer) {
-        this.singer = singer;
     }
 
     @Override

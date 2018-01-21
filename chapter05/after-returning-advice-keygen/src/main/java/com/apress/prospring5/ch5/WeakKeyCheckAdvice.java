@@ -7,8 +7,7 @@ import static com.apress.prospring5.ch5.KeyGenerator.WEAK_KEY;
 
 public class WeakKeyCheckAdvice implements AfterReturningAdvice {
     @Override
-    public void afterReturning(Object returnValue, Method method, 
-            Object[] args,Object target) throws Throwable {
+    public void afterReturning(Object returnValue, Method method, Object[] args,Object target) {
 
         if ((target instanceof KeyGenerator)
                 && ("getKey".equals(method.getName()))) {

@@ -6,3 +6,7 @@ jar {
 				"Class-Path"         : configurations.compile.collect { it.getName() }.join(' '))
 	}
 }
+
+compileJava {
+    options.compilerArgs << '-Xlint:deprecation'
+}

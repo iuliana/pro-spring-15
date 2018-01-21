@@ -17,3 +17,6 @@ war {
 	}
 }
 
+compileJava {
+	options.compilerArgs << '-Xlint:deprecation'
+}

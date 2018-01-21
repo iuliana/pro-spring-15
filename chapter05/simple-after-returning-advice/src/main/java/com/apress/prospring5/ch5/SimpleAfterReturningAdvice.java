@@ -19,8 +19,7 @@ public class SimpleAfterReturningAdvice implements AfterReturningAdvice {
     }
 
     @Override
-    public void afterReturning(Object returnValue, Method method, 
-             Object[] args, Object target) throws Throwable {
+    public void afterReturning(Object returnValue, Method method, Object[] args, Object target) {
         System.out.println("After '" + method.getName()+ "' put down guitar.");
     }
 }

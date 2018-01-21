@@ -1,53 +1,17 @@
 package com.apress.prospring5.ch14;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.joda.time.DateTime;
 
+@NoArgsConstructor
 public class Singer {
-    private Long id;
-    private String firstName;
-    private String lastName;
-    private DateTime birthDate;
-    private String ageCategory;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public DateTime getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(DateTime birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public String getAgeCategory() {
-        return ageCategory;
-    }
-
-    public void setAgeCategory(String ageCategory) {
-        this.ageCategory = ageCategory;
-    }
+    @Getter @Setter private Long id;
+    @Getter @Setter private String firstName;
+    @Getter @Setter private String lastName;
+    @Getter @Setter private DateTime birthDate;
+    @Getter @Setter private String ageCategory;
 
     @Override
     public String toString() {

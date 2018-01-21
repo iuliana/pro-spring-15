@@ -25,7 +25,8 @@ public class CollectionInjection {
 		ctx.close();
 	}
 
-	public void displayInfo() {
+	@SuppressWarnings("unchecked")
+	private void displayInfo() {
 		System.out.println("Map contents:\n");
 		map.entrySet().stream().forEach(e -> System.out.println("Key: " + e.getKey() + " - Value: " + e.getValue()));
 

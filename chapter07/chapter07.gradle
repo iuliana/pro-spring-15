@@ -13,6 +13,7 @@ subprojects {
 		if (!project.name.contains("boot")) {
 			compile spring.contextSupport, spring.orm, misc.slf4jJcl, misc.logback, db.h2, misc.lang3, hibernate.em
 		}
+		compileOnly misc.lombok
 		testCompile testing.junit
 	}
 }

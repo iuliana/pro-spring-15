@@ -18,7 +18,7 @@ public class JMXBootApplication {
 
 	private static Logger logger = LoggerFactory.getLogger(JMXBootApplication.class);
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String... args) throws IOException {
 		ConfigurableApplicationContext ctx = SpringApplication.run(JMXBootApplication.class, args);
 		assert (ctx != null);
 		logger.info("Started ...");

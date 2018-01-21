@@ -2,6 +2,7 @@ apply plugin: 'groovy'
 
 dependencies{
 	compile spring.context, misc.groovy, misc.joda
+	compileOnly misc.lombok
 }
 
 jar {

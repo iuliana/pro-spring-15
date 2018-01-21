@@ -14,6 +14,7 @@ subprojects {
 			compile spring.contextSupport, misc.slf4jJcl, misc.logback, db.h2, misc.lang3, hibernate.em,
 					hibernate.validator, misc.joda, misc.validation
 		}
+		compileOnly misc.lombok
 		testCompile testing.junit
 	}
 }

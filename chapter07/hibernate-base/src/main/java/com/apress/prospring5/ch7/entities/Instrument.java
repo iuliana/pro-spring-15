@@ -1,5 +1,7 @@
 package com.apress.prospring5.ch7.entities;
 
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -11,8 +13,9 @@ import java.util.Set;
 @Entity
 @Table(name = "instrument")
 public class Instrument implements Serializable {
-	private String instrumentId;
-	private Set<Singer> singers = new HashSet<>();
+	@Setter private String instrumentId;
+
+	@Setter private Set<Singer> singers = new HashSet<>();
 
 	@Id
 	@Column(name = "INSTRUMENT_ID")
@@ -26,14 +29,6 @@ public class Instrument implements Serializable {
 			inverseJoinColumns = @JoinColumn(name = "SINGER_ID"))
 	public Set<Singer> getSingers() {
 		return this.singers;
-	}
-
-	public void setSingers(Set<Singer> singers) {
-		this.singers = singers;
-	}
-
-	public void setInstrumentId(String instrumentId) {
-		this.instrumentId = instrumentId;
 	}
 
 	@Override

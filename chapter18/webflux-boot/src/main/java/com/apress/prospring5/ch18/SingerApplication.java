@@ -50,7 +50,7 @@ public class SingerApplication {
 	}
 
 	@Bean
-	public ServletRegistrationBean servletRegistrationBean() throws Exception {
+	public ServletRegistrationBean servletRegistrationBean() {
 		HttpHandler httpHandler = RouterFunctions.toHttpHandler(routingFunction());
 		ServletRegistrationBean registrationBean = new ServletRegistrationBean<>(new ServletHttpHandlerAdapter(httpHandler), "/");
 		registrationBean.setLoadOnStartup(1);

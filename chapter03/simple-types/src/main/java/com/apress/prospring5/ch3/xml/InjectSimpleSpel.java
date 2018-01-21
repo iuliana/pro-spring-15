@@ -1,37 +1,15 @@
 package com.apress.prospring5.ch3.xml;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class InjectSimpleSpel {
-    private String name;
-    private int age;
-    private float height;
+    @Getter @Setter private String name;
+    @Getter @Setter private int age;
+    @Getter @Setter private float height;
     private boolean programmer;
-    private Long ageInSeconds;
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return this.age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public float getHeight() {
-        return this.height;
-    }
-
-    public void setHeight(float height) {
-        this.height = height;
-    }
+    @Getter @Setter private Long ageInSeconds;
 
     public boolean isProgrammer() {
         return this.programmer;
@@ -39,14 +17,6 @@ public class InjectSimpleSpel {
 
     public void setProgrammer(boolean programmer) {
         this.programmer = programmer;
-    }
-
-    public Long getAgeInSeconds() {
-        return this.ageInSeconds;
-    }
-
-    public void setAgeInSeconds(Long ageInSeconds) {
-        this.ageInSeconds = ageInSeconds;
     }
 
     public String toString() {

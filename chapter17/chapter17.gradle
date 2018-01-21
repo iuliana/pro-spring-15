@@ -19,6 +19,7 @@ subprojects {
 			compile spring.context, spring.webSocket, spring.messaging, spring.webmvc, web.websocket, misc.slf4jJcl,
 					misc.logback, misc.lang3, misc.jacksonDatabind, web.servlet, web.jstl
 		}
+		compileOnly misc.lombok
 		testCompile testing.junit
 	}
 }

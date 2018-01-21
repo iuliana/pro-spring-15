@@ -10,6 +10,7 @@ subprojects {
 
 	dependencies {
 		compile spring.context, misc.slf4jJcl, misc.logback
+		compileOnly misc.lombok
 		testCompile testing.junit
 	}
 }

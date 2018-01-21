@@ -1,23 +1,15 @@
 package com.apress.prospring5.ch3.xml;
 
 import com.apress.prospring5.ch2.decoupled.MessageProvider;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@NoArgsConstructor
+@AllArgsConstructor
 public class ConfigurableMessageProvider implements MessageProvider {
-	private String message = "Default message";
-
-	public ConfigurableMessageProvider() {
-
-	}
-
-	public ConfigurableMessageProvider(String message) {
-		this.message = message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getMessage() {
-		return message;
-	}
+    @Getter
+    @Setter
+    private String message = "Default message";
 }

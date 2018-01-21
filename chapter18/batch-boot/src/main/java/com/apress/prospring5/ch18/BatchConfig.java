@@ -29,6 +29,7 @@ import javax.sql.DataSource;
  */
 @Configuration
 @EnableBatchProcessing
+@SuppressWarnings("unchecked")
 public class BatchConfig {
 
 	@Autowired

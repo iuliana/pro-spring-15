@@ -18,5 +18,6 @@ subprojects {
 			}
 			compile spring.batchCore, misc.io, misc.slf4jJcl, misc.logback, misc.lang3
 		}
+		compileOnly misc.lombok
 	}
 }

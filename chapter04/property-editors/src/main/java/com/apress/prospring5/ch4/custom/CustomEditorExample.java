@@ -18,8 +18,7 @@ public class CustomEditorExample {
         ctx.load("classpath:spring/app-context-02.xml");
         ctx.refresh();
 
-        CustomEditorExample bean =
-            (CustomEditorExample) ctx.getBean("exampleBean");
+        CustomEditorExample bean = (CustomEditorExample) ctx.getBean("exampleBean");
 
         System.out.println(bean.getName());
 

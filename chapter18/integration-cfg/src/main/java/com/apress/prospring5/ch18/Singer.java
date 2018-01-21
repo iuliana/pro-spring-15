@@ -1,35 +1,20 @@
 package com.apress.prospring5.ch18;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
 public class Singer {
+    @Getter
+    @Setter
     private String firstName;
-    private String lastName;
+    @Getter @Setter private String lastName;
     //best song :D
-    private String song;
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getSong() {
-        return song;
-    }
-
-    public void setSong(String song) {
-        this.song = song;
-    }
+    @Getter @Setter private String song;
 
     @Override
     public String toString() {

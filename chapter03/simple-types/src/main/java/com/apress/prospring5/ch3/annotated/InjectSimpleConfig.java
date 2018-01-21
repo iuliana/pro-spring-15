@@ -1,33 +1,21 @@
 package com.apress.prospring5.ch3.annotated;
 
+import lombok.Getter;
 import org.springframework.stereotype.Component;
 
 @Component("injectSimpleConfig")
 public class InjectSimpleConfig {
 
-	private String name = "John Mayer";
-	private int age = 39;
-	private float height = 1.92f;
+	@Getter private String name = "John Mayer";
+	@Getter private int age = 39;
+	@Getter private float height = 1.92f;
+
 	private boolean programmer = false;
-	private Long ageInSeconds = 1_241_401_112L;
 
-	public String getName() {
-		return name;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public float getHeight() {
-		return height;
-	}
+	@Getter private Long ageInSeconds = 1_241_401_112L;
 
 	public boolean isProgrammer() {
 		return programmer;
 	}
 
-	public Long getAgeInSeconds() {
-		return ageInSeconds;
-	}
 }

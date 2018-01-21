@@ -1,6 +1,8 @@
 package com.apress.prospring5.ch4;
 
 import javax.annotation.PostConstruct;
+
+import lombok.Setter;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
@@ -8,16 +10,8 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class SingerWithJSR250 {
     private static final String DEFAULT_NAME = "Eric Clapton";
 
-    private String name;
-    private int age = Integer.MIN_VALUE;
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
+    @Setter private String name;
+    @Setter private int age = Integer.MIN_VALUE;
 
     @PostConstruct
     private void init() throws Exception {

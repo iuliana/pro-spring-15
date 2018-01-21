@@ -3,11 +3,14 @@ package com.apress.prospring5.ch4;
 import java.io.File;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+
+import lombok.Setter;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class DestructiveBeanWithJSR250 {
     private File file;
-    private String filePath;
+
+    @Setter private String filePath;
     
     @PostConstruct
     public void afterPropertiesSet() throws Exception {
@@ -36,10 +39,6 @@ public class DestructiveBeanWithJSR250 {
         System.out.println("File exists: " + file.exists());
     }
 
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
-    }
-
     public static void main(String... args) throws Exception {
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
         ctx.load("classpath:spring/app-context-annotation.xml");
@@ -49,7 +48,7 @@ public class DestructiveBeanWithJSR250 {
             (DestructiveBeanWithJSR250) ctx.getBean("destructiveBean");
 
         System.out.println("Calling destroy()");
-        ctx.destroy();
+        ctx.close();
         System.out.println("Called destroy()");
     }
 }

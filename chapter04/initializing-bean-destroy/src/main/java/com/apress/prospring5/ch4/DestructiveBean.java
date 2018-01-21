@@ -1,12 +1,14 @@
 package com.apress.prospring5.ch4;
 
 import java.io.File;
+
+import lombok.Setter;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class DestructiveBean implements InitializingBean {
     private File file;
-    private String filePath;
+    @Setter private String filePath;
     
     public void afterPropertiesSet() throws Exception {
         System.out.println("Initializing Bean");
@@ -32,19 +34,15 @@ public class DestructiveBean implements InitializingBean {
         System.out.println("File exists: " + file.exists());
     }
 
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
-    }
-
     public static void main(String... args) throws Exception {
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
         ctx.load("classpath:spring/app-context-xml.xml");
         ctx.refresh(); 
 
-        DestructiveBean bean = (DestructiveBean) ctx.getBean("destructiveBean");
+        ctx.getBean("destructiveBean");
 
         System.out.println("Calling destroy()");
-        ctx.destroy();
+        ctx.close();
         System.out.println("Called destroy()");
     }
 }

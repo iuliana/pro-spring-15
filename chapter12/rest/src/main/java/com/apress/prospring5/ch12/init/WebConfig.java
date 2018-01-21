@@ -76,6 +76,7 @@ public class WebConfig implements WebMvcConfigurer {
 		return mc;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Bean CastorMarshaller castorMarshaller() {
 		CastorMarshaller castorMarshaller = new CastorMarshaller();
 		castorMarshaller.setMappingLocation(ctx.getResource("classpath:spring/oxm-mapping.xml"));

@@ -1,19 +1,13 @@
 package com.apress.prospring5.ch5;
-    
+
+import lombok.Getter;
+
 public class UserInfo {
-    private String userName;
-    private String password;
+    @Getter private String userName;
+    @Getter private String password;
 
     public UserInfo(String userName, String password) {
         this.userName = userName;
         this.password = password;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getUserName() {
-        return userName;
     }
 }

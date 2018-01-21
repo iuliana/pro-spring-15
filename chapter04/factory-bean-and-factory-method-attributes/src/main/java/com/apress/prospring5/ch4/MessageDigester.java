@@ -1,18 +1,12 @@
 package com.apress.prospring5.ch4;
 
+import lombok.Setter;
+
 import java.security.MessageDigest;
 
 public class MessageDigester {
-    private MessageDigest digest1;
-    private MessageDigest digest2;
-
-    public void setDigest1(MessageDigest digest1) {
-        this.digest1 = digest1;
-    }
-
-    public void setDigest2(MessageDigest digest2) {
-        this.digest2 = digest2;
-    }
+    @Setter private MessageDigest digest1;
+    @Setter private MessageDigest digest2;
 
     public void digest(String msg) {
         System.out.println("Using digest1");

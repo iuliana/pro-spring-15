@@ -3,45 +3,17 @@ package com.apress.prospring5.ch10;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.joda.time.DateTime;
 
+@NoArgsConstructor
 public class AnotherSinger {
-    private String firstName;
-    private String lastName;
-    private DateTime birthDate;
-    private URL personalSite;
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public DateTime getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(DateTime birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public URL getPersonalSite() {
-        return personalSite;
-    }
-
-    public void setPersonalSite(URL personalSite) {
-        this.personalSite = personalSite;
-    }
+    @Getter @Setter private String firstName;
+    @Getter @Setter private String lastName;
+    @Getter @Setter private DateTime birthDate;
+    @Getter @Setter private URL personalSite;
 
     public String toString() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

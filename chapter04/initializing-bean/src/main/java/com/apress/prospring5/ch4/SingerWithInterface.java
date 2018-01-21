@@ -1,5 +1,6 @@
 package com.apress.prospring5.ch4;
 
+import lombok.Setter;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
@@ -8,18 +9,10 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class SingerWithInterface implements InitializingBean {
     private static final String DEFAULT_NAME = "Eric Clapton";
 
-    private String name;
-    private int age = Integer.MIN_VALUE;
+    @Setter private String name;
+    @Setter private int age = Integer.MIN_VALUE;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet() {
         System.out.println("Initializing bean");
 
         if (name == null) {

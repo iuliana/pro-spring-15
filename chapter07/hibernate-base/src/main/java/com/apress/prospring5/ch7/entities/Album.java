@@ -1,5 +1,7 @@
 package com.apress.prospring5.ch7.entities;
 
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -13,16 +15,12 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Table(name = "album")
 public class Album implements Serializable {
 
-	private Long id;
-	private String title;
-	private Date releaseDate;
-	private int version;
+	@Setter private Long id;
+	@Setter private String title;
+	@Setter private Date releaseDate;
+	@Setter private int version;
 
-	private Singer singer;
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+	@Setter private Singer singer;
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -52,22 +50,6 @@ public class Album implements Serializable {
 	@Column(name = "RELEASE_DATE")
 	public Date getReleaseDate() {
 		return this.releaseDate;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public void setSinger(Singer singer) {
-		this.singer = singer;
-	}
-
-	public void setReleaseDate(Date releaseDate) {
-		this.releaseDate = releaseDate;
-	}
-
-	public void setVersion(int version) {
-		this.version = version;
 	}
 
 	@Override

@@ -1,14 +1,16 @@
 package com.apress.prospring5.ch4;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named("messageProvider")
+@NoArgsConstructor
 public class ConfigurableMessageProvider implements MessageProvider {
-    private String message = "Default message";
-
-    public ConfigurableMessageProvider() {
-    }
+    @Getter @Setter private String message = "Default message";
 
     @Inject
     @Named("message")
@@ -16,11 +18,4 @@ public class ConfigurableMessageProvider implements MessageProvider {
         this.message = message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public String getMessage() {
-        return message;
-    }
 }

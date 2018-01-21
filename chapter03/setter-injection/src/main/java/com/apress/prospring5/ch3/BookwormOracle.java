@@ -1,11 +1,10 @@
 package com.apress.prospring5.ch3;
 
-public class BookwormOracle implements Oracle {
-    private Encyclopedia encyclopedia;
+import lombok.Setter;
 
-    public void setEncyclopedia(Encyclopedia encyclopedia) {
-        this.encyclopedia = encyclopedia;
-    }
+public class BookwormOracle implements Oracle {
+    @Setter
+    private Encyclopedia encyclopedia;
 
     @Override
     public String defineMeaningOfLife() {

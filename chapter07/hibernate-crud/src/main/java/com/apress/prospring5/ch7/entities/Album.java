@@ -1,5 +1,8 @@
 package com.apress.prospring5.ch7.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
@@ -15,40 +18,15 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class Album extends AbstractEntity {
 
 	@Column
-	private String title;
+	@Getter @Setter private String title;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "RELEASE_DATE")
-
-	private Date releaseDate;
+	@Getter @Setter private Date releaseDate;
 
 	@ManyToOne
 	@JoinColumn(name = "SINGER_ID")
-	private Singer singer;
-
-	public Singer getSinger() {
-		return this.singer;
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public Date getReleaseDate() {
-		return this.releaseDate;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public void setSinger(Singer singer) {
-		this.singer = singer;
-	}
-
-	public void setReleaseDate(Date releaseDate) {
-		this.releaseDate = releaseDate;
-	}
+	@Getter @Setter private Singer singer;
 
 	@Override
 	public String toString() {

@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
@@ -16,79 +19,28 @@ import java.text.SimpleDateFormat;
 
 @Entity
 @Table(name="car")
+@NoArgsConstructor
 public class Car {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @Column(name = "ID")
-    private Long id;
+    @Getter @Setter private Long id;
 
     @Column(name="LICENSE_PLATE")
-    private String licensePlate;
+    @Getter @Setter private String licensePlate;
 
     @Column(name="MANUFACTURER")
-    private String manufacturer;
+    @Getter @Setter private String manufacturer;
 
     @Column(name="MANUFACTURE_DATE")
     @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
-    private DateTime manufactureDate;
+    @Getter @Setter private DateTime manufactureDate;
+
     @Column(name="AGE")
-    private int age;
+    @Getter @Setter private int age;
 
     @Version
-    private int version;
-
-    public Long getId() {
-        return id;
-    }
-
-
-    public String getLicensePlate() {
-        return licensePlate;
-    }
-
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-
-    public DateTime getManufactureDate() {
-        return manufactureDate;
-    }
-
-
-    public int getAge() {
-        return age;
-    }
-
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setLicensePlate(String licensePlate) {
-        this.licensePlate = licensePlate;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-
-    public void setManufactureDate(DateTime manufactureDate) {
-        this.manufactureDate = manufactureDate;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
+    @Getter @Setter private int version;
 
     @Override
     public String toString() {

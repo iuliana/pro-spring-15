@@ -33,6 +33,7 @@ subprojects {
 					spring.data, spring.webmvc, misc.castor, misc.validation, web.tiles, web.jstl,
 					misc.jacksonDatabind, web.servlet, misc.io
 		}
+		compileOnly misc.lombok
 		testCompile testing.junit
 	}
 }

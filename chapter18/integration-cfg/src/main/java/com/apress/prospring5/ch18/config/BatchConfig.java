@@ -36,6 +36,7 @@ import javax.sql.DataSource;
 @EnableBatchProcessing
 @Import(DataSourceConfig.class)
 @ComponentScan("com.apress.prospring5.ch18")
+@SuppressWarnings("unchecked")
 public class BatchConfig {
 
 	private static Logger logger = LoggerFactory.getLogger(BatchConfig.class);

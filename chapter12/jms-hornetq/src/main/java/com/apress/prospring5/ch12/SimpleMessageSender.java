@@ -22,14 +22,10 @@ public class SimpleMessageSender implements MessageSender {
     public void sendMessage(final String message) {
         jmsTemplate.setDeliveryDelay(5000L);
 
-        this.jmsTemplate.send(new MessageCreator() {
-            @Override
-            public Message createMessage(Session session)
-                    throws JMSException {
-                TextMessage jmsMessage = session.createTextMessage(message);
-                logger.info(">>> Sending: " + jmsMessage.getText());
-                return jmsMessage;
-            }
+        this.jmsTemplate.send(session -> {
+            TextMessage jmsMessage = session.createTextMessage(message);
+            logger.info(">>> Sending: " + jmsMessage.getText());
+            return jmsMessage;
         });
     }
 }

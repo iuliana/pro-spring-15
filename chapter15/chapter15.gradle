@@ -20,6 +20,7 @@ subprojects {
 					spring.data, spring.webmvc,  web.servlet, spring.oxm, misc.castor,
 					misc.jacksonDatabind, web.httpclient
 		}
+		compileOnly misc.lombok
 		testCompile testing.junit
 	}
 }

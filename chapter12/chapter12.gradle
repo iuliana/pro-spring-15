@@ -17,6 +17,7 @@ subprojects {
 			}
 			compile misc.slf4jJcl, misc.logback, misc.lang3, hibernate.em, misc.guava
 		}
+		compileOnly misc.lombok
 		testCompile testing.junit
 	}
 }

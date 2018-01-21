@@ -1,19 +1,15 @@
 package com.apress.prospring5.ch3.xml;
 
+import lombok.Setter;
+
 /**
  * Created by iuliana.cosmina on 2/25/17.
  */
 public class Singer {
+    @Setter
     private String name;
+    @Setter
     private int age;
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
         
     public String toString() {
         return "\tName: " + name + "\n\t" + "Age: " + age;

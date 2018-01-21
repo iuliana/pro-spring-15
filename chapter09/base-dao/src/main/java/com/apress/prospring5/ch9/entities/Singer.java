@@ -1,5 +1,9 @@
 package com.apress.prospring5.ch9.entities;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
@@ -14,6 +18,7 @@ import javax.persistence.*;
         @NamedQuery(name=Singer.FIND_ALL, query="select s from Singer s"),
         @NamedQuery(name=Singer.COUNT_ALL, query="select count(s) from Singer s")
 })
+@NoArgsConstructor
 public class Singer implements Serializable {
 
     public static final String FIND_ALL = "Singer.findAll";
@@ -22,73 +27,24 @@ public class Singer implements Serializable {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @Column(name = "ID")
-    private Long id;
+    @Getter @Setter private Long id;
 
     @Version
     @Column(name = "VERSION")
-    private int version;
+    @Getter @Setter private int version;
 
     @Column(name = "FIRST_NAME")
-    private String firstName;
+    @Getter @Setter private String firstName;
 
     @Column(name = "LAST_NAME")
-    private String lastName;
+    @Getter @Setter private String lastName;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "BIRTH_DATE")
-    private Date birthDate;
+    @Getter @Setter private Date birthDate;
 
     @OneToMany(mappedBy = "singer", cascade=CascadeType.ALL, orphanRemoval=true)
-    private Set<Album> albums = new HashSet<>();
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getVersion() {
-        return this.version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
-
-    public String getFirstName() {
-        return this.firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Date getBirthDate() {
-        return this.birthDate;
-    }
-
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-    }
-
-
-    public Set<Album> getAlbums() {
-        return this.albums;
-    }
-
-    public void setAlbums(Set<Album> albums) {
-     this.albums = albums;
-    }
+    @Getter @Setter private Set<Album> albums = new HashSet<>();
 
     public boolean addAbum(Album album) {
         album.setSinger(this);

@@ -10,5 +10,6 @@ subprojects {
 
 	dependencies {
 		compile spring.webmvc, misc.slf4jJcl, misc.logback, misc.lang3
+		compileOnly misc.lombok
 	}
 }

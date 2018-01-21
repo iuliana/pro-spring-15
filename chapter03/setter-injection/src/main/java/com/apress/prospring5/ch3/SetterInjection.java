@@ -1,12 +1,11 @@
 package com.apress.prospring5.ch3;
 
+import lombok.Setter;
+
 public class SetterInjection {
 
+	@Setter
 	private Dependency dependency;
-
-	public void setDependency(Dependency dependency) {
-		this.dependency = dependency;
-	}
 
 	@Override
 	public String toString() {

@@ -39,6 +39,7 @@ ext {
 	thymeSecurityVersion = '3.0.2.RELEASE'
 	jQueryVersion = '3.2.1'
 	twsVersion = '9.0.0.M22'
+	lombokVersion = '1.16.18'
 
 	//persistency libraries
 	hibernateVersion = '5.2.10.Final'
@@ -147,6 +148,7 @@ ext {
 			jacksonDatabind: "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion",
 			poi            : "org.apache.poi:poi:$poiVersion",
 			io             : "commons-io:commons-io:2.5",
+			lombok           : "org.projectlombok:lombok:$lombokVersion"
 	]
 
 	web = [
