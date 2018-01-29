@@ -32,3 +32,10 @@ Build it and copy dependencies into build/libs using:
 gradle clean build copyDependencies
 ----
 
+Observations: IntelliJ IDEA still does not know how to handle aspects thus my recommendation to run the examples in the command line is to follow the next steps:
+
+* build the whole project with gradle clean build -x test --refresh-dependencies (from pro-spring-5 directory)
+* go to chapter05/aspectj-aspects/
+* execute gradle copyDependencies
+* go to: aspectj-aspects/build/libs
+* execute java -jar aspectj-aspects-5.0-SNAPSHOT.jar
